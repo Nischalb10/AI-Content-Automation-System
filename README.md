@@ -1,8 +1,8 @@
-# 🤖 AI Content Automation System - CrewAI
+# AI Content Automation System - CrewAI
 
 A sophisticated multi-agent AI system for automated content generation, summarization, writing, and editing using **CrewAI**. This system demonstrates advanced agent collaboration, conversation memory, and structured content workflows.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [System Architecture](#system-architecture)
@@ -14,22 +14,20 @@ A sophisticated multi-agent AI system for automated content generation, summariz
 - [Memory Management](#memory-management)
 - [Examples](#examples)
 - [Demo](#demo)
-- [Advanced Features](#advanced-features)
-- [Troubleshooting](#troubleshooting)
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Features
-- **🤝 Multi-Agent Collaboration**: 4 specialized agents working together seamlessly
-- **📰 News Collection**: Intelligent news gathering and curation
-- **📝 Content Summarization**: Concise summaries preserving key information
-- **✍️ Content Writing**: Engaging, well-structured article generation
-- **🔍 Quality Editing**: Professional content refinement and validation
-- **💾 Conversation Memory**: Maintains context across interactions
-- **🔄 Follow-up Instructions**: Support for iterative content modifications
-- **📊 Structured Output**: JSON-based results for easy integration
+- ** Multi-Agent Collaboration**: 4 specialized agents working together seamlessly
+- ** News Collection**: Intelligent news gathering and curation
+- ** Content Summarization**: Concise summaries preserving key information
+- ** Content Writing**: Engaging, well-structured article generation
+- ** Quality Editing**: Professional content refinement and validation
+- ** Conversation Memory**: Maintains context across interactions
+- ** Follow-up Instructions**: Support for iterative content modifications
+- ** Structured Output**: JSON-based results for easy integration
 
 ### Advanced Capabilities
 - **Context Awareness**: Agents leverage previous interactions
@@ -40,7 +38,7 @@ A sophisticated multi-agent AI system for automated content generation, summariz
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -77,7 +75,7 @@ A sophisticated multi-agent AI system for automated content generation, summariz
 
 ---
 
-## 🚀 Installation
+##  Installation
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -157,7 +155,7 @@ MEMORY_CONFIG = {
 
 ---
 
-## 📖 Usage
+##  Usage
 
 ### Basic Usage
 
@@ -208,7 +206,7 @@ python examples.py --all
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 Content Automation System/
@@ -291,7 +289,7 @@ Content Automation System/
 
 ---
 
-## 💾 Memory Management
+##  Memory Management
 
 ### ConversationMemory Class
 
@@ -353,7 +351,7 @@ summary = memory.get_summary()
 
 ---
 
-## 📚 Examples
+##  Examples
 
 ### Example 1: Basic Content Generation
 ```python
@@ -388,7 +386,7 @@ python examples.py -i
 
 ---
 
-## 🎬 Demo
+##  Demo
 
 ### Running the Demo
 
@@ -407,254 +405,5 @@ python examples.py -i
    ```bash
    python examples.py --all
    ```
-
-### Demo Output Flow
-
-```
-┌─────────────────────────────────────────┐
-│  Example 1: Basic Content Generation    │
-├─────────────────────────────────────────┤
-│  📰 Step 1: Collecting News             │
-│  📝 Step 2: Summarizing Content         │
-│  ✍️  Step 3: Writing Content             │
-│  🔍 Step 4: Editing Content             │
-│  ✅ Final Output Displayed              │
-└─────────────────────────────────────────┘
-         ↓
-┌─────────────────────────────────────────┐
-│  Example 2: Multi-Topic Processing      │
-├─────────────────────────────────────────┤
-│  Processing: Quantum Computing          │
-│  Processing: Renewable Energy           │
-│  Processing: Blockchain Technology      │
-│  📊 Memory Summary                      │
-└─────────────────────────────────────────┘
-         ↓
-┌─────────────────────────────────────────┐
-│  Example 3: Follow-up Modifications     │
-├─────────────────────────────────────────┤
-│  Initial: Cybersecurity Threats         │
-│  Follow-up: Make more technical         │
-│  📊 Memory Context Preserved            │
-└─────────────────────────────────────────┘
-         ↓
-┌─────────────────────────────────────────┐
-│  Example 4: Conversation Memory         │
-├─────────────────────────────────────────┤
-│  User: Create content about AI careers  │
-│  User: Now low-cost online learning     │
-│  📚 Memory Snapshot Shown               │
-└─────────────────────────────────────────┘
-```
-
+   
 ---
-
-## 🚀 Advanced Features
-
-### 1. Context-Aware Agents
-Agents receive previous conversation context and can build upon it:
-
-```python
-# Agents automatically augment task descriptions with context
-augmented_description = f"Topic: {topic}\nPrevious Context:\n{context}\n..."
-```
-
-### 2. Tool Integration
-Each agent has specialized tools:
-
-```python
-# News Collector uses news search tool
-@tool
-def search_news(topic: str, max_results: int = 5) -> str:
-    """Search for news articles"""
-    ...
-
-# Editor uses validation tools
-@tool
-def validate_content(content: str) -> str:
-    """Validate content quality"""
-    ...
-```
-
-### 3. Error Handling
-Comprehensive error handling throughout:
-
-```python
-try:
-    results = system.process_topic(topic)
-except Exception as e:
-    print(f"Error: {str(e)}")
-    # Error logged to memory
-```
-
-### 4. Extensible Pipeline
-Easy to add new agents or modify workflow:
-
-```python
-# Custom agent creation
-def create_custom_agent() -> Agent:
-    return Agent(
-        role="Custom Role",
-        goal="Custom Goal",
-        backstory="Custom Backstory",
-        verbose=True,
-        llm=llm
-    )
-```
-
----
-
-## 🛠️ Troubleshooting
-
-### Issue: OpenAI API Key Error
-
-**Solution:**
-```bash
-# 1. Verify .env file exists
-cat .env  # or type .env on Windows
-
-# 2. Check key validity
-python -c "import os; from dotenv import load_dotenv; load_dotenv(); print('Key loaded:', os.getenv('OPENAI_API_KEY') is not None)"
-
-# 3. Update key if needed
-echo "OPENAI_API_KEY=your_new_key" > .env
-```
-
-### Issue: Memory File Not Persisting
-
-**Solution:**
-```python
-# Ensure proper file permissions
-import os
-os.chmod("conversation_history.json", 0o644)
-
-# Or reinitialize memory
-from memory import ConversationMemory
-memory = ConversationMemory()
-```
-
-### Issue: Slow Response Times
-
-**Solution:**
-- Reduce `verbose=True` to `False` during execution
-- Increase `max_rpm` limit in config
-- Use `gpt-3.5-turbo` instead of `gpt-4` for faster responses
-
-### Issue: Module Import Errors
-
-**Solution:**
-```bash
-# Reinstall dependencies
-pip install --upgrade -r requirements.txt
-
-# Or specific module
-pip install --upgrade crewai
-```
-
----
-
-## 📊 Performance Metrics
-
-- **Average Processing Time**: 30-60 seconds per topic (with GPT-4)
-- **Memory Footprint**: < 50MB
-- **Max Stored Interactions**: 50 (configurable)
-- **Supported Concurrent Topics**: 1 (sequential processing)
-
----
-
-## 📝 Example Output
-
-### Input Topic
-"Artificial Intelligence in Healthcare"
-
-### Pipeline Output
-
-```
-📰 COLLECTED NEWS:
-- AI Revolutionizes Diagnosis
-- Machine Learning Improves Treatments
-- Future of Medical Imaging with AI
-
-📝 SUMMARY:
-Artificial Intelligence is transforming healthcare through advanced diagnostics, 
-personalized treatment plans, and improved imaging analysis. AI algorithms can 
-identify patterns humans might miss, leading to better patient outcomes.
-
-✍️ WRITTEN CONTENT:
-[Complete article with introduction, body sections, and conclusion]
-
-✨ FINAL CONTENT:
-[Polished, publication-ready content with all refinements]
-```
-
----
-
-## 🔗 Integration Examples
-
-### With REST API
-```python
-from flask import Flask, request
-from main import ContentAutomationSystem
-
-app = Flask(__name__)
-system = ContentAutomationSystem()
-
-@app.route('/generate-content', methods=['POST'])
-def generate_content():
-    data = request.json
-    topic = data.get('topic')
-    output = system.process_topic(topic, verbose=False)
-    return output
-```
-
-### With Discord Bot
-```python
-import discord
-from main import ContentAutomationSystem
-
-system = ContentAutomationSystem()
-
-@bot.command()
-async def generate(ctx, *, topic):
-    output = system.process_topic(topic, verbose=False)
-    await ctx.send(output['final_content'][:2000])
-```
-
----
-
-## 📄 License
-
-This project is provided as-is for educational and demonstration purposes.
-
----
-
-## 👥 Contributing
-
-Contributions are welcome! Areas for enhancement:
-- Real news API integration
-- Database storage for memory
-- Multi-language support
-- Advanced caching mechanisms
-- Distributed agent execution
-
----
-
-## 📞 Support
-
-For issues or questions:
-1. Check the Troubleshooting section
-2. Review example scripts
-3. Check config.py for configuration options
-4. Review CrewAI documentation
-
----
-
-## 🎓 Learning Resources
-
-- [CrewAI Documentation](https://docs.crewai.com/)
-- [OpenAI API Reference](https://platform.openai.com/docs/api-reference)
-- [Multi-Agent Systems Concepts](https://en.wikipedia.org/wiki/Multi-agent_system)
-
----
-
-**Happy Creating! 🚀**
