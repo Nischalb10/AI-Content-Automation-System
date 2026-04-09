@@ -20,14 +20,14 @@ A sophisticated multi-agent AI system for automated content generation, summariz
 ## Features
 
 ### Core Features
-- ** Multi-Agent Collaboration**: 4 specialized agents working together seamlessly
-- ** News Collection**: Intelligent news gathering and curation
-- ** Content Summarization**: Concise summaries preserving key information
-- ** Content Writing**: Engaging, well-structured article generation
-- ** Quality Editing**: Professional content refinement and validation
-- ** Conversation Memory**: Maintains context across interactions
-- ** Follow-up Instructions**: Support for iterative content modifications
-- ** Structured Output**: JSON-based results for easy integration
+- **Multi-Agent Collaboration**: 4 specialized agents working together seamlessly
+- **News Collection**: Intelligent news gathering and curation
+- **Content Summarization**: Concise summaries preserving key information
+- **Content Writing**: Engaging, well-structured article generation
+- **Quality Editing**: Professional content refinement and validation
+- **Conversation Memory**: Maintains context across interactions
+- **Follow-up Instructions**: Support for iterative content modifications
+- **Structured Output**: JSON-based results for easy integration
 
 ### Advanced Capabilities
 - **Context Awareness**: Agents leverage previous interactions
